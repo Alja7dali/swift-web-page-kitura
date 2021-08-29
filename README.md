@@ -27,7 +27,7 @@ import SwepKituraSupport
 let router = Router()
 defer { Kitura.stop() }
 
-router.get("/") { request, response, next in in
+router.get("/") { request, response, next in
   response.send(
     document {
       head {
@@ -50,7 +50,7 @@ router.get("/") { request, response, next in in
   next()
 }
 
-router.get("style.min.css") {
+router.get("style.min.css") { request, response, next in
   response.send(
     stylesheet {
       selector("body") {
